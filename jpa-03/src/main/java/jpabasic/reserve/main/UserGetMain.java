@@ -1,4 +1,4 @@
-package main;
+package jpabasic.reserve.main;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -6,7 +6,7 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import jpabasic.reserve.domain.User;
 
-public class UserUpdateMain {
+public class UserGetMain {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabegin");
 
@@ -18,8 +18,8 @@ public class UserUpdateMain {
             if (user == null) {
                 System.out.println("User 없음");
             } else {
-                String newName = "이름" + (System.currentTimeMillis() % 100);
-                user.changeName(newName);
+                System.out.printf("User 있음: email=%s, name=%s, createDate=%s\n",
+                        user.getEmail(), user.getName(), user.getCreateDate());
             }
             transaction.commit();
         } catch (Exception ex) {

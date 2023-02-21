@@ -1,4 +1,4 @@
-package main;
+package jpabasic.reserve.main;
 
 import jakarta.persistence.*;
 import jpabasic.reserve.domain.User;
